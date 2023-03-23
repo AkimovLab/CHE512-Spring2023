@@ -1,0 +1,122 @@
+
+<!DOCTYPE html>
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+
+    <title>LVC HAMILTONIAN &#8212; lvc_hamiltonian V.0.1.1 documentation</title>
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="_static/classic.css" />
+    
+    <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+    <script src="_static/jquery.js"></script>
+    <script src="_static/underscore.js"></script>
+    <script src="_static/_sphinx_javascript_frameworks_compat.js"></script>
+    <script src="_static/doctools.js"></script>
+    
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="prev" title="Readme Page" href="README.html" /> 
+  </head><body>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="README.html" title="Readme Page"
+             accesskey="P">previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="index.html">lvc_hamiltonian V.0.1.1 documentation</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">LVC HAMILTONIAN</a></li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <section id="lvc-hamiltonian">
+<h1>LVC HAMILTONIAN<a class="headerlink" href="#lvc-hamiltonian" title="Permalink to this heading">¶</a></h1>
+<blockquote>
+<div><dl class="field-list simple">
+<dt class="field-odd">automodule:<span class="colon">:</span></dt>
+<dd class="field-odd"><p>lvc_hamiltonian</p>
+</dd>
+<dt class="field-even">members<span class="colon">:</span></dt>
+<dd class="field-even"><p></p></dd>
+</dl>
+</div></blockquote>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>    <span class="k">def</span> <span class="nf">set_X</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">X</span><span class="p">):</span>  <span class="c1">#Setting Up varibales for X for iterations</span>
+        <span class="sd">&#39;&#39;&#39;</span>
+<span class="sd">        This is a function takes the values of X from the iteration and uses it in VA, VD, and VC</span>
+
+<span class="sd">        Args:</span>
+<span class="sd">          VA (float): Obtained from vlaues defined in the __init__ function and the vlaue of X from iterations</span>
+<span class="sd">          VC (float): Obtained from vlaues defined in the __init__ function and the vlaue of X from iterations</span>
+<span class="sd">          VD (float): Obtained from vlaues defined in the __init__ function and the vlaue of X from iterations</span>
+
+<span class="sd">        &#39;&#39;&#39;</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">X</span> <span class="o">=</span> <span class="n">X</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">VA</span> <span class="o">=</span> <span class="mf">0.5</span> <span class="o">*</span> <span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">omega_X</span><span class="o">**</span><span class="mi">2</span><span class="o">*</span><span class="p">((</span><span class="bp">self</span><span class="o">.</span><span class="n">X</span> <span class="o">-</span> <span class="bp">self</span><span class="o">.</span><span class="n">X_intial</span><span class="p">)</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span> <span class="o">+</span> <span class="bp">self</span><span class="o">.</span><span class="n">omega_Y</span><span class="o">**</span><span class="mi">2</span> <span class="o">*</span> <span class="p">(</span> <span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">Y</span> <span class="o">-</span> <span class="bp">self</span><span class="o">.</span><span class="n">Y_initial</span><span class="p">)</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span> <span class="o">+</span> <span class="bp">self</span><span class="o">.</span><span class="n">delta</span><span class="p">)</span> <span class="c1">#equation (17)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">VD</span> <span class="o">=</span> <span class="mf">0.5</span> <span class="o">*</span> <span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">omega_X</span><span class="o">**</span><span class="mi">2</span><span class="o">*</span><span class="p">((</span><span class="bp">self</span><span class="o">.</span><span class="n">X</span> <span class="o">+</span> <span class="bp">self</span><span class="o">.</span><span class="n">X_intial</span><span class="p">)</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span> <span class="o">+</span> <span class="bp">self</span><span class="o">.</span><span class="n">omega_Y</span><span class="o">**</span><span class="mi">2</span> <span class="o">*</span><span class="p">(</span> <span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">Y</span> <span class="o">+</span> <span class="bp">self</span><span class="o">.</span><span class="n">Y_initial</span><span class="p">)</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span> <span class="o">+</span> <span class="bp">self</span><span class="o">.</span><span class="n">delta</span><span class="p">)</span> <span class="c1">#equation (18)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">VC</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">Cx</span> <span class="o">*</span> <span class="bp">self</span><span class="o">.</span><span class="n">X</span> <span class="o">+</span> <span class="bp">self</span><span class="o">.</span><span class="n">Cy</span> <span class="o">*</span> <span class="bp">self</span><span class="o">.</span><span class="n">Y</span> <span class="o">+</span> <span class="bp">self</span><span class="o">.</span><span class="n">delta_1_2</span> <span class="c1">#equation (16)</span>
+</pre></div>
+</div>
+</section>
+
+
+            <div class="clearer"></div>
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+  <div>
+    <h4>Previous topic</h4>
+    <p class="topless"><a href="README.html"
+                          title="previous chapter">Readme Page</a></p>
+  </div>
+  <div role="note" aria-label="source link">
+    <h3>This Page</h3>
+    <ul class="this-page-menu">
+      <li><a href="_sources/lvc_hamiltonian.rst.txt"
+            rel="nofollow">Show Source</a></li>
+    </ul>
+   </div>
+<div id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false"/>
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</div>
+<script>document.getElementById('searchbox').style.display = "block"</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="README.html" title="Readme Page"
+             >previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="index.html">lvc_hamiltonian V.0.1.1 documentation</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">LVC HAMILTONIAN</a></li> 
+      </ul>
+    </div>
+    <div class="footer" role="contentinfo">
+        &#169; Copyright 2023, Augustine Obeng.
+      Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 5.0.2.
+    </div>
+  </body>
+</html>
