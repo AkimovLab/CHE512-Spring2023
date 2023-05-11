@@ -1,0 +1,8 @@
+site_name: The Ray Group
+site_url: https://theraygroup.com/
+nav:
+- Home: index.md
+- Group Members: groupmembers.md
+- Dr.Ray: drray.md
+- Publications and Patents: publications.md
+- Contact Information: contact.md
